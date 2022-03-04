@@ -1,7 +1,10 @@
 <h1 align="center">ProEventos</h1>
 
 Repositório de uma aplicação web para simular um gerenciamento de eventos,
-código fonte do projeto foi baseado no curso [Seja Full-Stack com .NET Web API e Angular + EF Core - V2.0
+utilizando um banco de dados relacional, o backend desenvolvido com ASP.NET Core WebAPI e o 
+frontend criado com Angular CLI, esse projeto proporciona ao usuário o menuseio de registros para organização desses eventos.
+
+O código fonte do projeto foi baseado no curso [Seja Full-Stack com .NET Web API e Angular + EF Core - V2.0
 ](https://www.udemy.com/course/angular-dotnetcore-efcore/).
 
 ## :wrench: Recursos Utilizados
@@ -11,7 +14,7 @@ código fonte do projeto foi baseado no curso [Seja Full-Stack com .NET Web API 
 - [.NET 5.0](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)
 - [Entity Framework Core v5.0.2](https://docs.microsoft.com/pt-br/ef/core/)
 - [Swagger v5.6.3](https://swagger.io/)
-- [Angular CLI v12.0.0](https://angular.io/cli).
+- [Angular CLI v12.0.0](https://angular.io/cli)
 
 ## :floppy_disk: Clonar Repositório
 
