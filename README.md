@@ -20,6 +20,10 @@ O código fonte do projeto foi baseado no curso [Seja Full-Stack com .NET Web AP
 
 `git clone https://github.com/PauloAlves8039/dotnet-core-angular-proeventos.git`
 
+## :camera: API
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-core-angular-proeventos/blob/master/Frontend/ProEventos-App/src/assets/screenshot.png" /></p>
+
 ## Author
 
 :boy: [Paulo Alves](https://github.com/PauloAlves8039)
