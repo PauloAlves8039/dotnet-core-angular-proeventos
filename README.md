@@ -13,8 +13,11 @@ O código fonte do projeto foi baseado no curso [Seja Full-Stack com .NET Web AP
 - [ASP.NET Core WebAPI](https://docs.microsoft.com/pt-br/aspnet/core/tutorials/first-web-api?view=aspnetcore-5.0&tabs=visual-studio)
 - [.NET 5.0](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)
 - [Entity Framework Core v5.0.2](https://docs.microsoft.com/pt-br/ef/core/)
+- [SQLite](https://www.sqlite.org/index.html)
 - [Swagger v5.6.3](https://swagger.io/)
 - [Angular CLI v12.0.0](https://angular.io/cli)
+- [Bootstrap v4.6.0](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+- [NgxBootstrap v6.2.0](https://valor-software.com/ngx-bootstrap/#/)
 
 ## :floppy_disk: Clonar Repositório
 
