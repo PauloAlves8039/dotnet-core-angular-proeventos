@@ -12,10 +12,10 @@ export class EventosComponent implements OnInit {
   public eventos: Evento[] = [];
   public eventosFiltrados: Evento[] = [];
 
-  public larguraImagem: number = 150;
-  public margemImagem: number = 2;
-  public exibirImagem: boolean = true;
-  private _filtroLista: string = '';
+  public larguraImagem = 150;
+  public margemImagem = 2;
+  public exibirImagem = true;
+  private _filtroLista = '';
 
   public get filtroLista () {
     return this._filtroLista;
@@ -45,13 +45,13 @@ export class EventosComponent implements OnInit {
   }
 
   public getEventos(): void {
-    this.eventoService.getEventos().subscribe(
-      (eventos: Evento[]) => {
+    this.eventoService.getEventos().subscribe({
+      next: (eventos: Evento[]) => {
         this.eventos = eventos;
         this.eventosFiltrados = this.eventos;
       },
-      error => console.log(error)
-    );
+      error: (error: any) => console.log(error)
+    });
   }
 
 }
