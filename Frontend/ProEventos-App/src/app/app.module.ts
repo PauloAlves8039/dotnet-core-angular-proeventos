@@ -1,3 +1,4 @@
+import { TituloComponent } from './shared/titulo/titulo.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,6 +35,7 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
     DashboardComponent,
     PerfilComponent,
     NavComponent,
+    TituloComponent,
     DateTimeFormatPipe,
   ],
   imports: [
