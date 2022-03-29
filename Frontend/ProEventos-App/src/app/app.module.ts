@@ -1,3 +1,4 @@
+import { EventoListaComponent } from './components/eventos/evento-lista/evento-lista.component';
 import { TituloComponent } from './shared/titulo/titulo.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,6 +17,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventosComponent } from './components/eventos/eventos.component';
+import { EventoDetalheComponent } from './components/eventos/evento-detalhe/evento-detalhe.component';
 import { PalestrantesComponent } from './components/palestrantes/palestrantes.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ContatosComponent } from './components/contatos/contatos.component';
@@ -37,6 +39,8 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
     NavComponent,
     TituloComponent,
     DateTimeFormatPipe,
+    EventoDetalheComponent,
+    EventoListaComponent
   ],
   imports: [
     BrowserModule,
