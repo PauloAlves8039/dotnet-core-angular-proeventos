@@ -27,7 +27,7 @@ namespace ProEventos.Application
             {
                 var evento = _mapper.Map<Evento>(model);
 
-                _geralPersist.Add<EventoDto>(model);
+                _geralPersist.Add<Evento>(evento);
 
                 if (await _geralPersist.SaveChangesAsync()) 
                 {
