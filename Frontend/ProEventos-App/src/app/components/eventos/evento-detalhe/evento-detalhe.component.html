@@ -34,6 +34,7 @@
           bsDatepicker
           [bsConfig]="bsConfig"
           [ngClass]="cssValidator(f.dataEvento)"
+          value="{{evento.dataEvento | DateFormatPipe}}"
           formControlName="dataEvento" placeholder="">
           <div *ngIf="f.dataEvento.errors?.required && f.dataEvento.touched" class="invalid-feedback">
             Data e Hora são obrigatórias
