@@ -31,6 +31,8 @@
         <div class="form-group col-md-4">
           <label>Data e Hora</label>
           <input type="datetime" class="form-control"
+          bsDatepicker
+          [bsConfig]="bsConfig"
           [ngClass]="cssValidator(f.dataEvento)"
           formControlName="dataEvento" placeholder="">
           <div *ngIf="f.dataEvento.errors?.required && f.dataEvento.touched" class="invalid-feedback">
@@ -42,7 +44,6 @@
         <div class="form-group col-md-2">
           <label>Qtd Pessoas</label>
           <input type="number" class="form-control"
-  public cssValidator(campoForm: FormControl): any {
           [ngClass]="cssValidator(f.qtdPessoas)"
           formControlName="qtdPessoas" placeholder="">
           <div *ngIf="f.qtdPessoas.errors?.required && f.qtdPessoas.touched" class="invalid-feedback">
