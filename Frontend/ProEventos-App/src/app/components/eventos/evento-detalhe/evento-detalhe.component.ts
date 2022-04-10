@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-evento-detalhe',
@@ -34,6 +34,10 @@ export class EventoDetalheComponent implements OnInit {
 
   public resetForm(): void {
     this.form.reset();
+  }
+
+  public cssValidator(campoForm: FormControl): any {
+    return {'is-invalid': campoForm.errors && campoForm.touched};
   }
 
 }
