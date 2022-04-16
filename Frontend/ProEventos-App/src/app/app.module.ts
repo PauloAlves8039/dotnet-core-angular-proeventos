@@ -29,6 +29,7 @@ import { PerfilComponent } from './components/user/perfil/perfil.component';
 import { NavComponent } from './shared/nav/nav.component';
 
 import { EventoService } from './services/evento.service';
+import { LoteService } from './services/lote.service';
 
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 import { UserComponent } from './components/user/user.component';
@@ -74,7 +75,7 @@ defineLocale('pt-br', ptBrLocale);
     }),
     NgxSpinnerModule,
   ],
-  providers: [EventoService],
+  providers: [EventoService, LoteService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
