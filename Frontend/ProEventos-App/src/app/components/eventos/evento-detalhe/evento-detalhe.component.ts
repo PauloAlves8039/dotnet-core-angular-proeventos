@@ -1,3 +1,4 @@
+import { AbstractControl } from '@angular/forms';
 import { Lote } from './../../../models/Lote';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -115,7 +116,7 @@ export class EventoDetalheComponent implements OnInit {
     this.form.reset();
   }
 
-  public cssValidator(campoForm: FormControl): any {
+  public cssValidator(campoForm: FormControl | AbstractControl): any {
     return { 'is-invalid': campoForm.errors && campoForm.touched };
   }
 
