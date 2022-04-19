@@ -6,7 +6,8 @@
           <label>Tema</label>
           <input type="text" class="form-control"
           [ngClass]="{'is-invalid': f.tema.errors && f.tema.touched }"
-          formControlName="tema" placeholder="Insira o Tema">
+          formControlName="tema"
+          placeholder="Insira o Tema">
           <div *ngIf="f.tema.errors?.required" class="invalid-feedback">
             Tema é obrigatório
           </div>
@@ -23,7 +24,8 @@
           <label>Local</label>
           <input type="text" class="form-control"
           [ngClass]="cssValidator(f.local)"
-          formControlName="local" placeholder="">
+          formControlName="local"
+          placeholder="">
           <div *ngIf="f.local.errors?.required && f.local.touched" class="invalid-feedback">
             Local é obrigatório
           </div>
@@ -35,7 +37,8 @@
           [bsConfig]="bsConfig"
           [ngClass]="cssValidator(f.dataEvento)"
           value="{{evento.dataEvento | DateFormatPipe}}"
-          formControlName="dataEvento" placeholder="">
+          formControlName="dataEvento"
+          placeholder="">
           <div *ngIf="f.dataEvento.errors?.required && f.dataEvento.touched" class="invalid-feedback">
             Data e Hora são obrigatórias
           </div>
@@ -46,7 +49,8 @@
           <label>Qtd Pessoas</label>
           <input type="number" class="form-control"
           [ngClass]="cssValidator(f.qtdPessoas)"
-          formControlName="qtdPessoas" placeholder="">
+          formControlName="qtdPessoas"
+          placeholder="">
           <div *ngIf="f.qtdPessoas.errors?.required && f.qtdPessoas.touched" class="invalid-feedback">
             Qtd Pessoas é obrigatória.
           </div>
@@ -58,7 +62,8 @@
           <label>Telefone</label>
           <input type="text" class="form-control"
           [ngClass]="cssValidator(f.telefone)"
-          formControlName="telefone" placeholder="(00) 90000-0000">
+          formControlName="telefone"
+          placeholder="(00) 90000-0000">
           <div *ngIf="f.telefone.errors?.required && f.telefone.touched" class="invalid-feedback">
             Telefone é obrigatório.
           </div>
@@ -67,7 +72,8 @@
           <label>Email</label>
           <input type="text" class="form-control"
           [ngClass]="cssValidator(f.email)"
-          formControlName="email" placeholder="e-mail">
+          formControlName="email"
+          placeholder="e-mail">
           <div *ngIf="f.email.errors?.required && f.email.touched" class="invalid-feedback">
             Deve ser um endereço de e-mail válido.
           </div>
@@ -79,7 +85,8 @@
           <label>Imagem</label>
           <input type="text" class="form-control"
           [ngClass]="cssValidator(f.imagemURL)"
-            formControlName="imagemURL" placeholder="imagem">
+            formControlName="imagemURL"
+            placeholder="imagem">
           <div *ngIf="f.imagemURL.errors?.required && f.imagemURL.touched" class="invalid-feedback">
             Imagem é obrigatório.
           </div>
@@ -99,7 +106,8 @@
     </div>
   </form>
 </div>
-<div class="card rounded shadow-sm mt-4">
+
+<div class="card rounded shadow-sm mt-4" *ngIf="modoEditar">
   <div class="p-3">
     <div class="d-flex border-bottom">
       <h2 class="mr-auto">
@@ -129,27 +137,37 @@
               <label>Nome</label>
               <input
               [ngClass]="cssValidator(lotes.get(i + '.nome'))"
-              type="text" class="form-control" formControlName="nome" placeholder="Lote">
+              type="text" class="form-control"
+              formControlName="nome"
+              placeholder="Lote">
             </div>
             <div class="form-group col-md-4">
               <label>Quantidade</label>
               <input
               [ngClass]="cssValidator(lotes.get(i + '.quantidade'))"
-              type="text" class="form-control" formControlName="quantidade" placeholder="000">
+              type="text" class="form-control"
+              formControlName="quantidade"
+              placeholder="000">
             </div>
             <div class="form-group col-md-4">
               <label>Preço</label>
               <input
               [ngClass]="cssValidator(lotes.get(i + '.preco'))"
-              type="text" currencyMask class="form-control" formControlName="preco" placeholder="R$ 0,00">
+              type="text" currencyMask class="form-control"
+              formControlName="preco"
+              placeholder="R$ 0,00">
             </div>
             <div class="form-group col-md-4">
               <label>Data Início</label>
-              <input type="text" class="form-control" formControlName="dataInicio" placeholder="01/01/2019">
+              <input type="text" class="form-control"
+              formControlName="dataInicio"
+              placeholder="01/01/2019">
             </div>
             <div class="form-group col-md-4">
               <label>Data Fim</label>
-              <input type="text" class="form-control" formControlName="dataFim" placeholder="01/01/2019">
+              <input type="text" class="form-control"
+              formControlName="dataFim"
+              placeholder="01/01/2019">
             </div>
           </div>
         </fieldset>
@@ -172,3 +190,4 @@
   </div>
 </div>
 </div>
+<br>
