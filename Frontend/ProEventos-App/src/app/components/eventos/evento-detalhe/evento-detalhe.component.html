@@ -160,14 +160,18 @@
             <div class="form-group col-md-4">
               <label>Data Início</label>
               <input type="text" class="form-control"
-              formControlName="dataInicio"
-              placeholder="01/01/2019">
+              [ngClass]="cssValidator(lotes.get(i + '.dataInicio'))"
+              type="datetime-local"
+              class="form-control"
+              formControlName="dataInicio">
             </div>
             <div class="form-group col-md-4">
               <label>Data Fim</label>
               <input type="text" class="form-control"
-              formControlName="dataFim"
-              placeholder="01/01/2019">
+              [ngClass]="cssValidator(lotes.get(i + '.dataFim'))"
+              type="datetime-local"
+              class="form-control"
+              formControlName="dataFim">
             </div>
           </div>
         </fieldset>
