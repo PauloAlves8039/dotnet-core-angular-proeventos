@@ -226,4 +226,13 @@ export class EventoDetalheComponent implements OnInit {
     this.modalRef.hide();
   }
 
+  onFileChange(ev: any): void {
+    const reader = new FileReader();
+
+    reader.onload = (event: any) => this.imagemURL = event.target.result;
+
+    this.file = ev.target.files;
+    reader.readAsDataURL(this.file[0]);
+  }
+
 }
