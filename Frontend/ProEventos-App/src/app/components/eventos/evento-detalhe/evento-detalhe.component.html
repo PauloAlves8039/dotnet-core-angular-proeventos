@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="p-0" [ngClass]="{'col-md-8 pr-0': modoEditar, 'col-md-12': !modoEditar}">
+  <div [ngClass]="{'col-md-8 pr-0': modoEditar, 'col-md-12': !modoEditar}">
     <div class="card rounded shadow-sm">
       <form [formGroup]="form">
         <div class="p-3">
@@ -101,7 +101,6 @@
               Cancelar Alteração
             </button>
             <button class="btn btn-success" [disabled]="!form.valid" (click)="salvarEvento()">
-              <!--<span class="spinner-border spinner-border-sm mr-1"></span>-->
               Salvar Evento
             </button>
           </div>
@@ -109,7 +108,7 @@
       </form>
     </div>
 
-    <div class="card rounded shadow-sm mt-4" *ngIf="modoEditar">
+    <div class="card rounded shadow-sm mt-3" *ngIf="modoEditar">
       <div class="p-3">
         <div class="d-flex border-bottom">
           <h2 class="mr-auto">
@@ -201,7 +200,56 @@
     </div>
     </div>
   </div>
-</div>
+
+  <div class="col-md-4" *ngIf="modoEditar">
+    <div [formGroup]="form" class="card-evento-view shadow-sm">
+      <div class="form-row">
+        <div class="form-group m-0">
+          <input type="file" #file class="form-control is-invalid" placeholder="" style="display: none">
+        </div>
+      </div>
+      <div class="card profile-card-2">
+        <div class="card-img-block">
+          <img class="image"
+          [src]="imagemURL"
+          class="img-fluid"
+          (click)="file.click()"
+          alt="Card image cap"
+          tooltip="Uplaod de Nova Imagem"
+          [adaptivePosition]="false"
+          placement="bottom" />
+        </div>
+
+        <div class="card-body pt-3">
+          <h4>{{evento.tema}}</h4>
+          <p class="card-text">
+            <b>Local:</b> {{evento.local}}
+            <br>
+            <b>Data:</b> {{evento.dataEvento | DateFormatPipe}}
+          </p>
+          <hr>
+          <p class="card-text">
+            <b>Contatos</b><br>
+            <small class="text-muted">Telefone: {{evento.telefone}}</small>
+            <br>
+            <small class="text-muted">e-mail: {{evento.email}}</small>
+          </p>
+          <p class="card-text">
+            Capacidade:
+            <small class="text-muted">{{evento.qtdPessoas}}</small>
+          </p>
+          <div class="row">
+            <div class="icon-block col-md-8 iconesSociais">
+              <a href="">
+                <i class=""></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
 <br>
 
