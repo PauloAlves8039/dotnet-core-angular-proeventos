@@ -83,16 +83,6 @@
                 Deve ser um endereço de e-mail válido
               </div>
             </div>
-            <div class="form-group col-md-4">
-              <label>Imagem</label>
-              <input type="text" class="form-control"
-              [ngClass]="cssValidator(f.imagemURL)"
-                formControlName="imagemURL"
-                placeholder="imagem">
-              <div *ngIf="f.imagemURL.errors?.required && f.imagemURL.touched" class="invalid-feedback">
-                Imagem é obrigatório.
-              </div>
-            </div>
           </div>
         </div>
         <div class="card-footer">
