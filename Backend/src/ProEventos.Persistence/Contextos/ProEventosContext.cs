@@ -8,7 +8,7 @@ namespace ProEventos.Persistence
 {
     public class ProEventosContext : IdentityDbContext<User, Role, int,
                                                        IdentityUserClaim<int>,
-                                                       IdentityUserRole<int>,
+                                                       UserRole,
                                                        IdentityUserLogin<int>,
                                                        IdentityRoleClaim<int>,
                                                        IdentityUserToken<int>>
