@@ -1,9 +1,17 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ProEventos.Domain.Identity;
 using ProEventos.Domain.Models;
 
 namespace ProEventos.Persistence
 {
-    public class ProEventosContext : DbContext
+    public class ProEventosContext : IdentityDbContext<User, Role, int,
+                                                       IdentityUserClaim<int>,
+                                                       IdentityUserRole<int>,
+                                                       IdentityUserLogin<int>,
+                                                       IdentityRoleClaim<int>,
+                                                       IdentityUserToken<int>>
     {
         public DbSet<Evento> Eventos { get; set; }
         public DbSet<Lote> Lotes { get; set; }
