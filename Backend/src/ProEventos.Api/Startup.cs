@@ -104,6 +104,7 @@ namespace ProEventos.Api
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseCors(x => x.AllowAnyHeader()
