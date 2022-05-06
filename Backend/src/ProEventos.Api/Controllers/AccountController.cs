@@ -61,5 +61,31 @@ namespace ProEventos.Api.Controllers
                     $"Erro ao tentar recuperar Usuário. Erro: {ex.Message}");
             }
         }
+
+        [HttpPost("Login")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(UserLoginDto userLogin)
+        {
+            try
+            {
+                var user = await _accountService.GetUserByUserNameAsync(userLogin.Username);
+                if (user == null) return Unauthorized("Usuário ou Senha está errado");
+
+                var result = await _accountService.CheckUserPasswordAsync(user, userLogin.Password);
+                if (!result.Succeeded) return Unauthorized();
+
+                return Ok(new
+                {
+                    userName = user.UserName,
+                    PrimeroNome = user.PrimeiroNome,
+                    token = _tokenService.CreateToken(user).Result
+                });
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError,
+                    $"Erro ao tentar realizar Login. Erro: {ex.Message}");
+            }
+        }
     }
 }
