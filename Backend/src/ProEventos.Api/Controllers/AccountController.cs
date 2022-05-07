@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ProEventos.Api.Extensions;
 using ProEventos.Application.Contratos;
 using ProEventos.Application.Dtos;
 
@@ -26,10 +27,11 @@ namespace ProEventos.Api.Controllers
 
         [HttpGet("GetUser/{userName}")]
         [AllowAnonymous]
-        public async Task<IActionResult> GetUser(string userName)
+        public async Task<IActionResult> GetUser()
         {
             try
             {
+                var userName = User.GetUserName();
                 var user = await _accountService.GetUserByUserNameAsync(userName);
                 return Ok(user);
             }
