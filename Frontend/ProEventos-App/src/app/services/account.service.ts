@@ -28,6 +28,24 @@ export class AccountService {
     );
   }
 
+  public register(model: any): Observable<void> {
+    return this.http.post<User>(this.baseUrl + 'register', model).pipe(
+      take(1),
+      map((response: User) => {
+        const user = response;
+        if (user) {
+          this.setCurrentUser(user)
+        }
+      })
+    );
+  }
+
+  logout(): void {
+    localStorage.removeItem('user');
+    this.currentUserSource.next(null);
+    this.currentUserSource.complete();
+  }
+
   public setCurrentUser(user: User): void {
     localStorage.setItem('user', JSON.stringify(user));
     this.currentUserSource.next(user);
