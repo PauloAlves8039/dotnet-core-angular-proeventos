@@ -10,7 +10,6 @@ import { environment } from '@environments/environment';
 
 export class EventoService {
   baseURL = environment.apiURL + 'api/eventos';
-  tokenHeader = new HttpHeaders({'Authorization': `Bearer ${JSON.parse(localStorage.getItem('user')).token}`});
 
   constructor(private http: HttpClient) { }
 
