@@ -25,8 +25,7 @@ namespace ProEventos.Api.Controllers
             _tokenService = tokenService;
         }
 
-        [HttpGet("GetUser/{userName}")]
-        [AllowAnonymous]
+        [HttpGet("GetUser")]
         public async Task<IActionResult> GetUser()
         {
             try
@@ -101,13 +100,21 @@ namespace ProEventos.Api.Controllers
         {
             try
             {
+                if (userUpdateDto.UserName != User.GetUserName())
+                    return Unauthorized("Usuário Inválido");
+
                 var user = await _accountService.GetUserByUserNameAsync(User.GetUserName());
                 if (user == null) return Unauthorized("Usuário Inválido");
 
                 var userReturn = await _accountService.UpdateAccount(userUpdateDto);
                 if (userReturn == null) return NoContent();
 
-                return Ok(userReturn);
+                return Ok(new
+                {
+                    userName = userReturn.UserName,
+                    PrimeroNome = userReturn.PrimeiroNome,
+                    token = _tokenService.CreateToken(userReturn).Result
+                });
             }
             catch (Exception ex)
             {
