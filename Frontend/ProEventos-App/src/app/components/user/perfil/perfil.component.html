@@ -14,23 +14,22 @@
 					</a>
 				</div>
 				<div class="card-body">
-					<div class="h4 text-center mb-3">@UserName</div>
-					<div class="h7 text-bold pb-1"><b>Nome:</b> Paulo Alves</div>
+					<div class="h4 text-center mb-3">@{{f.userName.value}}</div>
+					<div class="h7 text-bold pb-1"><b>Nome:</b> {{f.primeiroNome.value + ' ' + f.ultimoNome.value}}</div>
 					<div class="h7">
-						Developer of web applications, JavaScript, ASP.NET Core, C#, PostgreSQL, TDD, Docker, GIT
-						etc.
+						{{f.descricao.value}}
 					</div>
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item">
 						<div class="row">
 							<div class="col-6 text-center border-right">
-								<div class="h5">1342</div>
-								<div class="h6 text-muted">Eventos Ministrados</div>
+								<div class="h5">0</div>
+								<div class="h6 text-muted">Meus Eventos Criados</div>
 							</div>
 							<div class="col-6 text-center">
-								<div class="h5">1342</div>
-								<div class="h6 text-muted">Eventos Participados</div>
+								<div class="h5">0</div>
+								<div class="h6 text-muted">Eventos Como Participante</div>
 							</div>
 						</div>
 					</li>
@@ -104,14 +103,14 @@
             <div *ngIf="f.funcao.errors.required">função é obrigatório é obrigatório</div>
           </div>
         </div>
-        <form-group class="col-12">
+        <div class="form-group col-12">
           <label>Descrição</label>
           <input type="text" formControlName="descricao" class="form-control"
             [ngClass]="{ 'is-invalid': f.descricao.errors && f.descricao.touched }" />
           <div *ngIf="f.descricao.errors && f.descricao.touched" class="invalid-feedback">
             <div *ngIf="f.descricao.errors.required">Descrição é obrigatório</div>
           </div>
-        </form-group>
+        </div>
 			</div>
 			<div>
 				<h3 class="pt-3 border-bottom">Mudar Senha</h3>
