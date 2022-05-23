@@ -18,6 +18,8 @@ O código fonte do projeto foi baseado no curso [Seja Full-Stack com .NET Web AP
 - [Angular CLI v12.0.0](https://angular.io/cli)
 - [Bootstrap v4.6.0](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
 - [NgxBootstrap v6.2.0](https://valor-software.com/ngx-bootstrap/#/)
+- [JWT v5.0.2](https://jwt.io/)
+- [Identity v2.2.0](https://docs.microsoft.com/pt-br/aspnet/core/security/authentication/identity?view=aspnetcore-6.0&tabs=visual-studio)
 
 ## :floppy_disk: Clonar Repositório
 
