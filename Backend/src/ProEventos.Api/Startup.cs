@@ -39,7 +39,7 @@ namespace ProEventos.Api
                 context => context.UseSqlite(Configuration.GetConnectionString("Default"))
             );
 
-            services.AddIdentityCore<User>(options => 
+            services.AddIdentityCore<User>(options =>
             {
                 options.Password.RequireDigit = false;
                 options.Password.RequireNonAlphanumeric = false;
@@ -65,12 +65,12 @@ namespace ProEventos.Api
                             ValidateAudience = false
                         };
                     });
-            
+
             services.AddControllers()
-                    .AddJsonOptions(options => 
+                    .AddJsonOptions(options =>
                         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())
                     )
-                    .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = 
+                    .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling =
                         Newtonsoft.Json.ReferenceLoopHandling.Ignore
                     );
 
@@ -80,6 +80,7 @@ namespace ProEventos.Api
             services.AddScoped<ILoteService, LoteService>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IPalestranteService, PalestranteService>();
             services.AddScoped<IUtil, Util>();
 
             services.AddScoped<IGeralPersist, GeralPersist>();
@@ -92,7 +93,7 @@ namespace ProEventos.Api
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "ProEventos.Api", Version = "v1" });
-                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme 
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Description = @"JWT Authorization header usando Bearer.
                                 Entre com 'Bearer ' [espaço] então coloque seu token.
@@ -106,7 +107,7 @@ namespace ProEventos.Api
                 options.AddSecurityRequirement(new OpenApiSecurityRequirement()
                 {
                     {
-                        new OpenApiSecurityScheme 
+                        new OpenApiSecurityScheme
                         {
                             Reference = new OpenApiReference
                             {
