@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
   AbstractControlOptions,
   FormBuilder,
@@ -18,6 +18,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./perfil-detalhe.component.scss'],
 })
 export class PerfilDetalheComponent implements OnInit {
+  @Output() changeFormValue = new EventEmitter();
   userUpdate = {} as UserUpdate;
   form!: FormGroup;
 
@@ -32,6 +33,13 @@ export class PerfilDetalheComponent implements OnInit {
   ngOnInit(): void {
     this.validation();
     this.carregarUsuario();
+    this.verificaForm();
+  }
+
+  private verificaForm(): void {
+    this.form.valueChanges.subscribe(() =>
+      this.changeFormValue.emit({ ...this.form.value })
+    );
   }
 
   private carregarUsuario(): void {
@@ -62,6 +70,7 @@ export class PerfilDetalheComponent implements OnInit {
     this.form = this.fb.group(
       {
         userName: [''],
+        imagemURL: [''],
         titulo: ['NaoInformado', Validators.required],
         primeiroNome: ['', Validators.required],
         ultimoNome: ['', Validators.required],
