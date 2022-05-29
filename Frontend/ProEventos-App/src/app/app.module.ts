@@ -26,6 +26,7 @@ import { AppComponent } from './app.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { EventoDetalheComponent } from './components/eventos/evento-detalhe/evento-detalhe.component';
 import { PalestrantesComponent } from './components/palestrantes/palestrantes.component';
+import { PalestranteListaComponent } from './components/palestrantes/palestrante-lista/palestrante-lista.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ContatosComponent } from './components/contatos/contatos.component';
 import { PerfilComponent } from './components/user/perfil/perfil.component';
@@ -37,12 +38,12 @@ import { LoteService } from './services/lote.service';
 import { AccountService } from './services/account.service';
 
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
-
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 import { UserComponent } from './components/user/user.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
+
 
 defineLocale('pt-br', ptBrLocale);
 
@@ -51,6 +52,7 @@ defineLocale('pt-br', ptBrLocale);
     AppComponent,
     EventosComponent,
     PalestrantesComponent,
+    PalestranteListaComponent,
     ContatosComponent,
     DashboardComponent,
     PerfilComponent,

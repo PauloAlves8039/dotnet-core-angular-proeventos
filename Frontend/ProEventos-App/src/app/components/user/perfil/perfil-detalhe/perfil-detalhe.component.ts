@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { ValidatorField } from '@app/helpers/ValidatorField';
 import { UserUpdate } from '@app/models/identity/UserUpdate';
 import { AccountService } from '@app/services/account.service';
+import { PalestranteService } from '@app/services/palestrante.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 
@@ -19,18 +20,20 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class PerfilDetalheComponent implements OnInit {
   @Output() changeFormValue = new EventEmitter();
+
   userUpdate = {} as UserUpdate;
   form!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     public accountService: AccountService,
+    public palestranteService: PalestranteService,
     private router: Router,
     private toaster: ToastrService,
     private spinner: NgxSpinnerService
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.validation();
     this.carregarUsuario();
     this.verificaForm();
@@ -96,6 +99,19 @@ export class PerfilDetalheComponent implements OnInit {
   public atualizarUsuario() {
     this.userUpdate = { ...this.form.value };
     this.spinner.show();
+
+    if (this.f.funcao.value == 'Palestrante') {
+      this.palestranteService.post().subscribe(
+        () => this.toaster.success('Função palestrante Ativada!', 'Sucesso!'),
+        (error) => {
+          this.toaster.error(
+            'A função palestrante não pode ser Ativada',
+            'Error'
+          );
+          console.error(error);
+        }
+      );
+    }
 
     this.accountService
       .updateUser(this.userUpdate)
