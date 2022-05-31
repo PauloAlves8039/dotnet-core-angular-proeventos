@@ -42,6 +42,7 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 import { UserComponent } from './components/user/user.component';
 import { HomeComponent } from './components/home/home.component';
+import { RedesSociaisComponent } from './components/redesSociais/redesSociais.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 
@@ -62,6 +63,7 @@ defineLocale('pt-br', ptBrLocale);
     TituloComponent,
     DateTimeFormatPipe,
     EventoDetalheComponent,
+    RedesSociaisComponent,
     EventoListaComponent,
     UserComponent,
     HomeComponent,

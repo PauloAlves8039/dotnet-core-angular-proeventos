@@ -22,8 +22,10 @@ export class PalestranteListaComponent implements OnInit {
 
   constructor(
     private palestranteService: PalestranteService,
+    private modalService: BsModalService,
     private toastr: ToastrService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private router: Router
   ) {}
 
   public ngOnInit(): void {
